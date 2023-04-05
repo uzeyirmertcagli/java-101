@@ -1,0 +1,33 @@
+//ARABA-PAKET----------------------------------------------------------------------------
+
+		/*
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Paket Giriniz : ");
+		String paket = scanner.nextLine();
+		char harf=paket.charAt(0);
+		String firstNChar = paket.substring(0,5);
+		switch (harf) {
+		case 'X':
+			System.out.println("Volvo");
+			break;
+		case  'C':v
+			System.out.println("Mercedes");
+			break;
+		case  'A': 
+			System.out.println("Audi");
+			break;
+		case  'Q':
+			System.out.println("Audi");
+			break;
+		case  'M':
+			if(paket.length()>=6 && paket.substring(0, 5).equals("MODEL"))
+				System.out.println("Tesla");
+			else
+				System.out.println("Bmw");
+			break;
+		default:
+			System.out.println("Geçersiz Paket ! ");
+			break;
+		}
+		*/
+		
