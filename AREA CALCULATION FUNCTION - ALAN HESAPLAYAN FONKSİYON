@@ -1,0 +1,66 @@
+package IV_HAFTA;
+
+import java.util.Scanner;
+
+public class IV_PAZAR {
+
+	public static void main(String[] args) {
+		//ALAN HESAPLAYAN FONKSİYON HAZIRLANMALI,
+		//DİK ÜÇGEN, KARE, DİKDÖRTGEN
+		//1- DİK ÜÇGEN 2- KARE 3 dİKDÖRTGEN    DİK ÜÇGEN -> (A*B)/2
+		//1 VE 3 İÇİN 2 TANE İNPUT(KENAR)      KARE -> A*A
+		//2 İSE 1 TANE İNPUT(KENAR)            DİKDÖRTGEN -> A*B
+		int islem = veriOkuInt("islem giriniz(1-Dikucgen,2-Kare,3-Dikdortgen ):");
+		int kenar1 = veriOkuInt(1 +". kenari giriniz:");
+		int kenar2=0;
+		if(islem!=2) {
+			kenar2 = veriOkuInt(2+". kenari giriniz:");
+		}
+		switch(islem ) {
+		case 1:
+			System.out.print("dikcugen alani:" +(int)(dikcugen(kenar1,kenar2)));
+			break;
+		case 2:
+			System.out.print("kare alani:" +(int)(kare(kenar1)));
+			break;
+		case 3:
+			System.out.print("dikdortgen alani:" +(int)(dikdortgen(kenar1,kenar2)));
+			break;
+		default:
+			System.out.println("Gecersiz islem");
+			break;
+		}
+		
+	}
+	private static int veriOkuInt(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		int kenar = scan.nextInt();
+		return kenar;
+	}
+	private static double veriOkuDouble(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		double kenar = scan.nextDouble();
+		return kenar;
+	}
+	private static String veriOkuLine(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		String kenar = scan.nextLine();
+		return kenar;
+	}
+	private static int dikdortgen(int kenar1, int kenar2) {
+		return kenar1*kenar2;
+	}
+	private static int kare(int kenar1) {
+		return kenar1*kenar1;
+	}
+	private static int dikcugen(int kenar1, int kenar2) {
+		return (kenar1*kenar2)/2;
+	}
+
+
+	}
+
+
