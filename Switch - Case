@@ -1,0 +1,112 @@
+	//SWİTCH_CASE-BÖLGE-SEÇ :------------------------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("1-ASYA");
+		System.out.println("2-AVRUPA");
+		System.out.println("3-AFRİKA");
+		System.out.println("4-AMERİKA");
+		System.out.println("Bilgi almak istediğiniz Kıtanın Kodunu Gİriniz : ");
+		int kod = scanner.nextInt();
+		
+		switch (kod) {
+		case 1:
+			System.out.println("Asya Gidip Görülmeli Usta.");
+			break;
+		case 2:
+			System.out.println("Avrupa Yaşanacak Kıta Babacım.");
+			break;
+
+		case 3:
+			System.out.println("Kabileler var . Seni ham yaparlar.");
+			break;
+		case 4:
+			System.out.println("Ah abicim ah. Yaşamak lazım :(");
+			break;
+			
+		default:
+			System.out.println("Yanlış Kod Girdiniz . ");
+			break;
+		}
+		
+		
+		
+		//SWİTCH_CASE-HARF-NOTU---------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Notu Giriniz : ");
+		int not = scanner.nextInt();
+		
+		switch (not/10) {
+		case 10:
+			if(not==100)
+				System.out.println("Not A");
+			else {
+				System.out.println("Geçersiz Not");
+			}
+			break;
+		case 9:
+			System.out.println("Not A");
+			break;
+		case 8:
+			System.out.println("Not B");
+			break;
+		case 7:
+			System.out.println("Not C");
+			break;
+		case 6:
+			System.out.println("Not D");
+			break;
+		case 5:
+		case 4:
+		case 3:
+		case 2:
+		case 1:
+			System.out.println("Not F");
+			break;
+
+		default:
+			if (not>=0 && not<10) {
+				System.out.println("Not F");
+			} else {
+				System.out.println("Geçersiz Not");
+
+			}
+			break;
+		}
+		
+		
+		
+		//SWİTCH_CASE-TEKRAR-YAZDIRMA---------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Sayı Giriniz : ");
+		int sayi = scanner.nextInt();
+		System.out.println("Tekrar Giriniz (Sınır '4' ): ");
+		int tekrar = scanner.nextInt();
+		
+		switch (tekrar) {
+		case 1:
+			System.out.println(sayi);
+			
+			break;
+		case 2 :
+			System.out.println(sayi+" "+ sayi);
+			break;
+		case 3 :
+			System.out.println(sayi+" "+sayi+" "+sayi);
+			break;
+		case 4:
+			System.out.println(sayi+" "+sayi+" "+sayi+" "+sayi);
+			break;
+			
+		default:
+			System.out.println("Fazla Tekrar Sayısı ! ");
+			break;
+		}
+		
