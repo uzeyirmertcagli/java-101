@@ -1,0 +1,61 @@
+package IV_HAFTA;
+
+import java.util.Scanner;
+
+public class URUN_SEPETİ_2_PAZAR {
+
+	public static void main(String[] args) {
+	int urunAdedi =0;
+	while (true) {
+		int islem = veriOkuInt("İşlemi Giriniz ! 1-Ekle , 2- Çıkar , 98-Satın Al , 99-İptal");
+		if(islem==1)
+			urunAdedi=urunEkle(urunAdedi);
+		if(islem==2)
+			urunAdedi=urunCikar(urunAdedi);
+		if(islem==98)
+		{
+		satinAl(urunAdedi);
+		break;
+		}
+		if(islem==99) {
+	System.out.println("İptal!");
+		break;}
+	}
+	}
+	private static void satinAl(int urunAdedi) {
+	System.out.println(urunAdedi+ "Tane Ürün Alındı. ");
+
+	}
+	private static int urunCikar(int urunAdedi) {
+		int yeniUrunAdedi;
+		if(urunAdedi>0) {
+			yeniUrunAdedi=urunAdedi-1;
+		System.out.println(urunAdedi+" . Ürün Çıkarıldı.");
+		
+		return yeniUrunAdedi;
+		} else {
+			System.out.println("Sepet Zaten Boş !");
+			return urunAdedi;
+		}
+	}
+	
+	private static int urunEkle(int urunAdedi) {
+		int yeniUrunAdedi;
+		if(urunAdedi<10) {
+			yeniUrunAdedi=urunAdedi+1;
+		System.out.println(yeniUrunAdedi+" . Ürün Eklendi.");
+		
+		return yeniUrunAdedi;
+		} else {
+			System.out.println("10'dan Fazla Ekleme Yapılmaz !");
+			return urunAdedi;
+		}
+	}
+	private static int veriOkuInt(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		int kenar = scan.nextInt();
+		return kenar;
+	}
+
+}
