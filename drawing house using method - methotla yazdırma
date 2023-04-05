@@ -1,0 +1,36 @@
+Scanner scanner = new Scanner(System.in);
+		System.out.print("Kaç katlı ev istiyorsunuz ?");
+		int kat = scanner.nextInt();
+		System.out.println("Evde Teras olsun mu ? 1-Evet || 2-Hayır");
+		int teras = scanner.nextInt();
+		if (teras==1) {
+			teras();
+		}else if (teras==2) {
+			cati();
+		}
+		
+		
+		for (int i = 0; i < kat; i++) {
+			kat();
+		} 
+    
+    
+    private static void cati() {
+	System.out.println("        /\\");
+	System.out.println("       /  \\");
+	System.out.println("      /    \\");
+	System.out.println("     /+====+\\");
+}
+private static void kat() {
+	System.out.println("     |	     |");
+	System.out.println("     |	     |");
+	System.out.println("     |	     |");
+	System.out.println("     |_______|");
+}
+private static void teras() {
+	System.out.println("        /\\");
+	System.out.println("       /  \\");
+	System.out.println("      /	   \\");
+	System.out.println("|====/+====+\\");
+		
+	}
