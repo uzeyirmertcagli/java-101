@@ -1,0 +1,40 @@
+	Scanner scanner = new Scanner(System.in);
+		System.out.println("Yazı Giriniz : ");
+		 String str= scanner.nextLine(), nstr="";
+	        char ch;
+	        
+	      System.out.print("Orjinal Yazı :  ");
+	      System.out.println(str); 
+	        
+	      for (int i=0; i<str.length(); i++)
+	      {
+	        ch= str.charAt(i); 
+	        nstr= ch+nstr; 
+	      }
+	      
+	      System.out.println("Ters Döndür =  "+ nstr);
+	      if (str==nstr) {
+				System.out.println("Aynı Yazı !:)");
+			}else {
+				System.out.println("Aynı Değil !");
+			}
+		
+		
+		
+		/*
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Yazı Girin : ");
+		String yazi = scanner.next();
+		
+		for (int i = 0; i < args.length; i++) {
+			char newChar = yazi.charAt(yazi.length()-1-i);
+			System.out.print(newChar);
+			
+		}
+		System.out.println();
+		for (int i = yazi.length(); i > 0 ; i--) {
+			char newChar = yazi.charAt(i-1);
+			System.out.print(newChar);
+		}
+		
+		*/
