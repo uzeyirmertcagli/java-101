@@ -1,0 +1,36 @@
+//YAKIT-BİLGİSİ----------------------------------------------------------------------------
+		
+		/*
+		Scanner scanner = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0");
+		System.out.println("Araba Modeli Nedir ? (BMW , SKODA , PEUGEOT)");
+		String marka = scanner.nextLine();
+		System.out.println("Kaç KM Yol Gİdilecek ?");
+		int km = scanner.nextInt();
+		System.out.println("Araba da Kaç Kişi Olacak ?");
+		int kisi = scanner.nextInt();
+		double mazot=22.6;
+		
+		double yakit =0;
+		switch (marka) {
+		case "SKODA":
+			yakit = 7.7;
+			double sonuc = (yakit*mazot/100*km)/kisi;
+			System.out.println("Yaktığı Lira : " + df.format(sonuc));
+			break;
+		case "BMW":
+			yakit = 16.2;
+			double sonuc1 = (yakit*mazot/100*km)/kisi;
+			System.out.println("Yaktığı Lira : " + df.format(sonuc1) );
+			break;
+		case "PEUGEOT":
+			yakit = 8.6;
+			double sonuc2 = (yakit*mazot/100*km)/kisi;
+			System.out.println("Yaktığı Lira : " + df.format(sonuc2) );
+			break;
+		default:
+			System.out.println("Geçersiz Araba !");
+			break;
+		}
+		
+		*/
