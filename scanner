@@ -1,0 +1,36 @@
+Scanner scanner = new Scanner(System.in);   
+		int a = (5+5)*2;
+		double b = 5.0/2.0;
+		System.out.println(b);
+		String ad = "Mert";
+		String dersKodu = "YZL 1232";
+		System.out.println("Dersin Kodu : " + dersKodu);
+		System.out.print("asd");
+		System.out.println("Benim Adım , " + ad);
+		System.out.println("Merhaba\n Dünya");
+		
+		//3 DEĞİŞKEN İLE EKRANA YAZDIRMA--------------------------------------------------------------
+		String merhaba = "MERHABA";
+		String virgul =" , ";
+		String dunya ="DÜNYA.";
+		
+		System.out.println(merhaba+virgul+dunya);
+		
+		
+		
+		//3 DEĞİŞKEN İLE SAYI TOPLAMLARINI EKRANA YAZDIRMA--------------------------------------------------------------
+
+		int sayi1=2;
+		int sayi2=4;
+		int sayi3=9;
+		
+		System.out.println("Toplam : " + sayi1*sayi2+sayi3); 
+		
+		
+		//KLAVYEDEN VERİ ALMA--------------------------------------------------------------
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Lütfen İlk Değeri Gİriniz : ");
+		int deger1 = scanner.nextInt();
+		System.out.println("Lütfen İkinci Değeri Giriniz : ");
+		int deger2 = scanner.nextInt();
+		System.out.println("Çarpım Sonucu  = " + deger1*deger2);
