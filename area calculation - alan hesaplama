@@ -1,0 +1,60 @@
+	//ÇOKGENİN ALANI--------------------------------------------------------------
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Kenar Uzunluğunu Giriniz : ");
+		int ku = scanner.nextInt();
+		System.out.println("Kenar Sayısını Giriniz : ");
+		int ks = scanner.nextInt();
+		
+		double sonuc = (ks*(Math.pow(ku, 2)))/(4*Math.tan(Math.PI/ks));
+		System.out.println("Çokgenin Alanı : " + sonuc);
+		
+		
+		
+		//DAİRE ALANI VE ÇEVRESİ--------------------------------------------------------------
+		
+		Scanner scanner = new Scanner(System
+		System.out.println("Yarıçap Uzunluğunu Giriniz :");
+		int yaricap = scanner.nextInt();
+		
+		double alan = Math.PI*(Math.pow(yaricap, 2));
+		double cevre = 2*Math.PI*yaricap;
+		
+		System.out.println("Daire Alanı : " + alan);
+		System.out.println("Daire Çevresi : " + cevre);
+		
+		
+		
+		
+		//ÜÇGEN ALANI--------------------------------------------------------------
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Taban Uzunluğunu Giriniz : ");
+		int taban = scanner.nextInt();
+		System.out.println("Yükseklik Uzunluğunu Giriniz : ");
+		int yukseklik = scanner.nextInt();
+		
+		int alan = (taban*yukseklik)/2;
+		
+		System.out.println("Üçgenin Alanı : " +alan);
+		
+		
+		
+		//AÇILI ÜÇGEN ALANI--------------------------------------------------------------
+		
+	Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("İlk kenar uzunluğunu Giriniz : ");
+		int k1 = scanner.nextInt();
+		System.out.println("İkinci Kenar Uzunluğunu Giriniz : ");
+		int k2 = scanner.nextInt();
+		System.out.println("Açı Ölçüsünğ Gİriniz : ");
+		double aci = scanner.nextDouble();
+		
+		double radiansValue = Math.toRadians(aci);
+		
+		double alan = (k1*k2)*Math.sin(radiansValue)/2;
+		
+		System.out.println("Açılı Üçgen Alanı : " +alan );
+		
