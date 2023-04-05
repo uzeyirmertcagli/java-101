@@ -1,0 +1,35 @@
+//HARF NOTU------------------------------------------------------------------------------------------
+		
+		/*
+		 * 90 ve üstü AA 85 VE - 90 ARASI AB, 80 VE - 85 ARASI BA, 70 VE - 80 ARASI BB,
+		 * 65 VE - 70 ARASI CC, 55 VE - 65 ARASI CD, 50 VE - 55 ARASI DD, 45 VE - 50
+		 * ARASI EE, 0 VE - 45 ARASI E, 0 DAN KUCUK 100 DEN BUYUKSE GECERSİZ
+		 */
+
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Not Giriniz :");
+		double not = scanner.nextDouble();
+
+		if (not >= 90 && not <= 100) {
+			System.out.println("AA");
+		} else if (not >= 85 && not < 90) {
+			System.out.println("AB");
+		} else if (not >= 80 && not < 85) {
+			System.out.println("BA");
+		} else if (not >= 70 && not < 80) {
+			System.out.println("BB");
+		} else if (not >= 65 && not < 70) {
+			System.out.println("CC");
+		} else if (not >= 55 && not < 65) {
+			System.out.println("CD");
+		} else if (not >= 50 && not < 55) {
+			System.out.println("DD");
+		} else if (not >= 45 && not < 50) {
+			System.out.println("EE");
+		} else if (not >= 0 && not < 45) {
+			System.out.println("E");
+		} else {
+			System.out.println("Geçersiz Not");
+		} 
+		 
