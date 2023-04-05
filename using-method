@@ -1,0 +1,26 @@
+    Scanner scanner = new Scanner(System.in);
+		System.out.println("1.Değeri Giriniz : ");
+		int s1 = scanner.nextInt();
+		System.out.println("2.Değeri Giriniz : ");
+		int s2 = scanner.nextInt();
+		
+		System.out.println("Toplama = " + toplama(s1, s2));
+		System.out.println("Çarpma = " + carpma(s1,s2));
+		System.out.println("Karesi = " + karesi(s1));
+    
+    
+    private static int toplama(int s1,int s2) {
+	return s1 + s2;
+}
+private static int karesi(int s1) {
+	int sonuc = carpma(s1, s1);
+	return sonuc;
+}
+private static int carpma(int s1,int s2) {
+	return s1*s2;
+}
+private static void harf() {
+	
+}
+}
+
