@@ -1,0 +1,24 @@
+//SAYI-TAHMİN-OYUNU--------------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		Random random = new Random();
+		int rnd = random.nextInt(100);
+		int sayac = 0;
+		System.out.println("Sayı Tahmin Oyununa Hoşgeldiniz !");
+		while (true) {
+			sayac++;
+			System.out.println("1 ile 100 Arası Sayını giriniz : ");
+			int tahmin = scanner.nextInt();
+			if (tahmin<1 || tahmin>100)
+				System.out.println("1 ile 100 arası giriniz !");
+			else if (rnd==tahmin) {
+				System.out.println("Doğru! " + sayac + " . Denemede buldunuz.");
+				break;
+			}
+			else if (rnd<tahmin)
+				System.out.println("Daha Küçük Sayı Giriniz ! ");
+			else if(rnd>tahmin)
+				System.out.println("Daha Büyük Sayı Giriniz !");
+		}
+		
