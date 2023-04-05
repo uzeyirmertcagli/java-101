@@ -1,0 +1,37 @@
+Scanner scanner = new Scanner(System.in);
+		System.out.println("LÜtfen Not Giriniz : ");
+		int not = scanner.nextInt();
+		
+		switch (not/10) {
+		case 10:
+			if (not>100)
+				System.out.println("Geçersiz not !");
+			else
+				System.out.println("Not A");
+			break;
+		case 9: 
+			System.out.println("Not A");
+			break;
+		case 8: 
+			System.out.println("Not B");
+			break;
+		case 7:
+			System.out.println("Not C");
+			break;
+		case 6:
+			System.out.println("Not B");
+		case 5:
+		case 4: 
+		case 3:
+		case 2:
+		case 1: 
+			System.out.println("Not F");
+			break;
+
+		default:
+			if (not>=0 && not<10) {
+				System.out.println("Not F");
+			} else {
+				System.out.println("Geçersiz Not");
+			}
+			break;
