@@ -1,0 +1,18 @@
+//MAX-MİN-BULMA----------------------------------------------------------------------------
+		
+		/*
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("İşlemi Giriniz :");
+		int islem = scanner.nextInt();
+		System.out.print("1. Sayıyı Giriniz :");
+		int s1 = scanner.nextInt();
+		System.out.print("2. Sayıyı Giriniz :");
+		int s2 = scanner.nextInt();
+		if(islem==1)
+			System.out.println("Girilen Max Değer : "+ Integer.max(s1, s2));
+		else if(islem==2)
+			System.out.println("Girilen Min Değer : "+ Integer.min(s1, s2));
+		else
+			System.out.println("Geçersiz İşlem !");
+		*/
+		
