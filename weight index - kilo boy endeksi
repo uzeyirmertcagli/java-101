@@ -1,0 +1,14 @@
+//KİLO BOY ENDESKİ------------------------------------------------------------------------------------------
+		
+		Scanner scanner = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
+		
+		System.out.println("Kilo Bilgisini Giriniz : ");
+		int kilo = scanner.nextInt();
+		System.out.println("Boy Bilgisini Giriniz : ");
+		double boy = scanner.nextDouble();
+		
+		double kbi = kilo/Math.pow(boy, 2);
+		
+		System.out.println(df.format(kbi));
+		
