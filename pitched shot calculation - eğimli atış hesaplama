@@ -1,0 +1,19 @@
+//EĞİMLİ ATIŞ------------------------------------------------------------------------------------------
+		
+	Scanner scanner = new Scanner(System.in); 
+		
+		System.out.println("Hız Bilgisini Giriniz : ");
+		int hiz = scanner.nextInt();
+		System.out.println("Açı Bilgisini Giriniz : ");
+		int aci = scanner.nextInt();
+		
+		double egim = 9.8;
+		
+		double radiansValue = Math.toRadians(aci);
+		double sin = Math.sin(radiansValue);
+		double cos= Math.cos(radiansValue);
+		
+		double yukseklik = ((Math.pow(hiz, 2))/2*egim)*Math.pow(sin, 2);
+		System.out.println("Maksimum Yükseklik : " + yukseklik);
+		double mesafe = (Math.pow(hiz, 2)/egim)*2*sin*cos;
+		System.out.println("Maksimum Mesafe : " + mesafe );
