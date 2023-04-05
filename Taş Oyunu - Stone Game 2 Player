@@ -1,0 +1,398 @@
+package V_HAFTA;
+
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class CUMARTESİ_5_2 {
+	
+
+	static int b1=0,b2=0, b3=0;
+	static int s1=0,s2=0, s3=0;
+	static String siradakiOyuncu="BEYAZ";
+	static boolean oyuncuDegisti=false;
+	static int sayi=0;
+	public static void main(String[] args) {
+		Random random = new Random();
+		sayi = random.nextInt(6)+1;
+		int bBaslangic =0 , sBaslangic=0;
+		while (!(bBaslangic<sBaslangic||bBaslangic>sBaslangic)) {
+			bBaslangic=random.nextInt(6)+1;
+			System.out.println("Beyaz için Zar = "+bBaslangic);
+			sBaslangic=random.nextInt(6)+1;
+			System.out.println("Siyah için Zar = " + sBaslangic);
+		}
+		if (sBaslangic<bBaslangic) {
+			siradakiOyuncu="BEYAZ";
+
+		}else if (sBaslangic>bBaslangic) {
+			siradakiOyuncu="SİYAH";
+
+		}
+		
+		while(!((b1>12 &&b2>12 &&b3>12)||(s1>12 &&s2>12 &&s3>12))) {
+			System.out.println(siradakiOyuncu + " islem yapiyor:");
+			if(oyuncuDegisti) {
+				sayi = random.nextInt(6)+1;
+				oyuncuDegisti=false;
+			}
+			System.out.println("islem yapilacak numara:"+ sayi);
+			String tas=veriOkuLine("Tas bilgisini giriniz");
+			boolean kontrol =checkHamle(tas,siradakiOyuncu);
+			if(kontrol==false) {
+				continue;
+			}
+			switch(tas) {
+			case "B1":
+				b1=tasiIlerlet("B", b1, sayi);
+				break;
+			case "B2":
+				b2=tasiIlerlet("B", b2, sayi);
+				break;
+			case "B3":
+				b3=tasiIlerlet("B", b3, sayi);
+				break;
+			case "S1":
+				s1=tasiIlerlet("S", s1, sayi);
+				break;
+			case "S2":
+				s2=tasiIlerlet("S", s2, sayi);
+				break;
+			case "S3":
+				s3=tasiIlerlet("S", s3, sayi);
+				break;
+			default:
+				System.out.println("yanlis tas bilgisi");
+				break;
+			}
+			
+			
+			ekranaYazdir(b1,b2,b3,s1,s2,s3);
+		}
+		if(b1>12 &&b2>12 &&b3>12) {
+			System.out.println("KAZANAN:BEYAZ");
+		} else {
+			System.out.println("KAZANAN:SIYAH");
+		}
+		
+	}
+
+	private static boolean checkHamle(String tas, String siradakiOyuncu2) {
+		if(siradakiOyuncu2.equals("BEYAZ")) {
+			char c=tas.charAt(0);
+			if(c=='B')
+				return true;
+			else
+				return false;
+		} else {
+			char c=tas.charAt(0);
+			if(c=='S')
+				return true;
+			else
+				return false;
+		}
+	}
+
+	private static int tasiIlerlet(String oyuncu, int tas, int sayi) {
+		if (tas<=12) {
+			if(oyuncu.equals("B")) {
+				int nokta =tas+sayi;
+				if(s1==nokta && s2==nokta && s3==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(s1==nokta && s2==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(s1==nokta && s3==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(s2==nokta && s3==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(s1==nokta) {
+					s1=0;
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				} else if(s2==nokta) {
+					s2=0;
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				} else if(s3==nokta) {
+					s3=0;
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				} else {
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				}
+			} else {
+				int nokta =tas+sayi;
+				if(b1==nokta && b2==nokta && b3==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(b1==nokta && b2==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(b1==nokta && b3==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(b2==nokta && b3==nokta) {
+					System.out.println("ilerleyemezsiniz");
+					return tas;
+				} else if(b1==nokta) {
+					b1=0;
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				} else if(b2==nokta) {
+					b2=0;
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				} else if(b3==nokta) {
+					b3=0;
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				} else {
+					siradakiOyuncu=degistir();
+					oyuncuDegisti=true;
+					return tas+sayi;
+				}
+			}
+		}else {
+			
+		System.out.println("İlerleyemezsiniz !");
+		return tas;
+		}
+	}
+
+
+	private static String degistir() {
+		if(siradakiOyuncu.equals("BEYAZ"))
+			return "SIYAH";
+		else
+			return "BEYAZ";
+	}
+
+	public static void ekranaYazdir(int b1, int b2, int b3, int s1, int s2, int s3) {
+
+		
+		String a = "__ __ __ __ __ __ __ __ __ __ __ __";
+		String b = "";
+		String c = "";
+		String d = "";
+		
+		if(b1>12) {
+			a=a+" B1 ";
+		}
+		if(b2>12) {
+			a=a+" B2 ";
+		}
+		if(b3>12) {
+			a=a+" B3 ";
+		}
+		if(s1>12) {
+			a=a+" S1 ";
+		}
+		if(s2>12) {
+			a=a+" S2 ";
+		}
+		if(s3>12) {
+			a=a+" S3 ";
+		}
+		for(int i=1; i<=12;i++) {
+			if(i==b1 && i==b2 && i==b3) {
+				b=b+"B1 ";
+				c=c+"B2 ";
+				d=d+"B3 ";
+			} else if(i==b1 && i==b2) {
+				b=b+"B1 ";
+				c=c+"B2 ";
+				d=d+"   ";
+			} else if(i==b1 && i==b3) {
+				b=b+"B1 ";
+				c=c+"B3 ";
+				d=d+"   ";
+			} else if(i==b2 && i==b3) {
+				b=b+"B2 ";
+				c=c+"B3 ";
+				d=d+"   ";
+			} else if(i==b1) {
+				b=b+"B1 ";
+				c=c+"   ";
+				d=d+"   ";
+			} else if(i==b2) {
+				b=b+"B2 ";
+				c=c+"   ";
+				d=d+"   ";
+			} else if(i==b3) {
+				b=b+"B3 ";
+				c=c+"   ";
+				d=d+"   ";
+			} else {
+				if(i==s1 && i==s2 && i==s3) {
+					b=b+"S1 ";
+					c=c+"S2 ";
+					d=d+"S3 ";
+				} else if(i==s1 && i==s2) {
+					b=b+"S1 ";
+					c=c+"S2 ";
+					d=d+"   ";
+				} else if(i==s1 && i==s3) {
+					b=b+"S1 ";
+					c=c+"S3 ";
+					d=d+"   ";
+				} else if(i==s2 && i==s3) {
+					b=b+"S2 ";
+					c=c+"S3 ";
+					d=d+"   ";
+				} else if(i==s1) {
+					b=b+"S1 ";
+					c=c+"   ";
+					d=d+"   ";
+				} else if(i==s2) {
+					b=b+"S2 ";
+					c=c+"   ";
+					d=d+"   ";
+				} else if(i==s3) {
+					b=b+"S3 ";
+					c=c+"   ";
+					d=d+"   ";
+				} else {
+					b=b+"   ";
+					c=c+"   ";
+					d=d+"   ";
+				}
+			}
+			
+			/*if(i==b1) {
+				b=b+"B1 ";
+				if(i==b2) {
+					c=c+"B2 ";
+					if(i==b3) {
+						d=d+"B3 ";
+					} else {
+						d=d+"   ";
+					}
+				} else {
+					if(i==b3) {
+						c=c+"B3 ";
+						d=d+"   ";
+					} else {
+						c=c+"   ";
+						d=d+"   ";
+					}
+				}
+				
+			} else {
+				if(i==b2) {
+					b=b+"B2 ";
+					if(i==b3) {
+						c=c+"B3 ";
+						d=d+"   ";
+					} else {
+						c=c+"   ";
+						d=d+"   ";
+					}
+				} else {
+					if(i==b3) {
+						b=b+"B3 ";
+						c=c+"   ";
+						d=d+"   ";
+					} else {
+						if(i==s1) {
+							if(i==s2) {
+								if(i==s3) {
+									b=b+"S1 ";
+									c=c+"S2 ";
+									d=d+"S3 ";
+								} else {
+									b=b+"S1 ";
+									c=c+"S2 ";
+									d=d+"   ";
+								}
+							} else {
+								if(i==s3) {
+									b=b+"S1 ";
+									c=c+"S3 ";
+									d=d+"   ";
+								} else {
+									b=b+"S1 ";
+									c=c+"   ";
+									d=d+"   ";
+								}
+							}
+							
+						} else {
+							if(i==s2) {
+								if(i==s3) {
+									b=b+"S2 ";
+									c=c+"S3 ";
+									d=d+"   ";
+								} else {
+									b=b+"S2 ";
+									c=c+"   ";
+									d=d+"   ";
+								}
+							} else {
+								if(i==s3) {
+									b=b+"S3 ";
+									c=c+"   ";
+									d=d+"   ";
+								} else {
+									b=b+"   ";
+									c=c+"   ";
+									d=d+"   ";
+								}
+							}
+						}
+					}
+				}
+			}*/
+			
+		}
+
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+
+	    
+	}
+
+
+
+
+
+	private static int veriOkuInt(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		int kenar = scan.nextInt();
+		return kenar;
+	}
+	
+	private static double veriOkuDouble(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		double kenar = scan.nextDouble();
+		return kenar;
+	}
+	private static String veriOkuLine(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		String kenar = scan.nextLine();
+		return kenar;
+	}
+
+	
+
+	
+	
+	
+
+}
