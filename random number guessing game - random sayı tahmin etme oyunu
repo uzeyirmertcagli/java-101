@@ -1,0 +1,108 @@
+
+
+	static int bilinenSayilar[] = new int[6];
+	static int bilinenSayiAdedi=0;
+	static int bilinenSayiIndex=0;
+	static int randomSayilar[]=new int[6];
+	static int secimler[] = new int[6]; 
+	public static void main(String[] args) {
+
+
+		
+	/*	int dizi[] = new int[5];
+		for (int i = 0; i < dizi.length; i++) {
+			dizi[i]= veriOkuInt((i+1)+" . Değeri Giriniz : ");
+			int reverseDizi[]= new int[dizi.length];
+			for (int i= 0 , j = dizi.length; i < reverseDizi.length; i++ , j--) {
+				
+			}
+		}*/
+		
+		
+	
+	for (int i = 0; i < secimler.length; i++) {
+		secimler[i]=veriOkuInt((i+1)+ " . Seçiminizi Giriniz : ");
+	
+	}
+
+	for (int i = 0; i < randomSayilar.length; i++) {
+		randomSayilar[i]= getRandomSayi();
+	}
+
+	for (int deger:secimler) {
+		boolean varMi = kontrolEt(deger , randomSayilar);
+		if(varMi) {
+			bilinenSayiAdedi++;
+			bilinenSayiIndex++;
+	}
+	}
+		System.out.println(bilinenSayiAdedi  + " Kadar Sayı Bildiniz !");
+		System.out.println("Girilen Sayılar : " + Arrays.toString(secimler));
+		System.out.println("Random Sayılar : " + Arrays.toString(randomSayilar));
+		System.out.println("Bilinen Sayılar : " + Arrays.toString(bilinenSayilar));
+		
+		
+		
+		
+		
+		
+		
+	}
+	private static int getRandomSayi() {
+		Random random =new Random();
+
+		while(true) {
+			int randomSayi = random.nextInt(10);
+			boolean dizideVarMi = dizideVarMiFonk(randomSayi);
+			if(!dizideVarMi)
+				return randomSayi;
+		}
+
+	}
+	
+	
+	private static boolean dizideVarMiFonk(int randomSayi) {
+		for(int randTemp : randomSayilar) {
+		if(randTemp==randomSayi) 
+			return true;
+		}
+		
+		return false;
+	}
+	private static boolean kontrolEt(int deger, int[] randomSayilar) {
+
+		for(int val : randomSayilar) {
+		if(deger==val) {
+	
+			bilinenSayilar[bilinenSayiIndex]=val;
+			return true ;
+		}
+		}
+		return false;
+	}
+	private static int veriOkuInt(String message) {
+		Scanner scan = new Scanner(System.in);
+		while(true) {
+		System.out.print(message);
+		int deger = scan.nextInt();
+		boolean kontrol =  okunanDegerDahaOnceVarMi(deger);
+		if(!kontrol) {
+			return deger;
+		} else
+			System.out.println("Lütfen Farklı Bir Değer Giriniz !");
+		}
+		
+	}
+	
+	
+	private static boolean okunanDegerDahaOnceVarMi(int deger) {
+		for(int randTemp : secimler) {
+			if(randTemp==deger || deger>=50) 
+
+				return true;
+		}
+		return false;
+	
+	}
+	}
+
