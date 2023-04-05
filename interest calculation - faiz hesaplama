@@ -1,0 +1,33 @@
+	//FAİZ------------------------------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Yıllık Faiz Oranını Giriniz : ");
+		double faiz = scanner.nextInt();
+		System.out.println("Para Kaç Yıl Bekleyecek : ");
+		int zaman = scanner.nextInt();
+		System.out.println("Anapara Bilgisini Giriniz : ");
+		int para = scanner.nextInt();
+		
+		double sonuc = para*Math.pow((1+(faiz/100)), zaman);
+		
+		System.out.println("Faiz Sonucu = " + sonuc);
+		
+		System.out.println(Math.rint(sonuc));
+		
+		System.out.println(Math.rint(faiz));
+		
+		System.out.println(Math.round(faiz));
+		
+		System.out.println(Math.rint(10.5));
+		System.out.println(Math.rint(10.501));
+		
+		
+		DecimalFormat df = new DecimalFormat("0.00");
+		System.out.println(df.format(sonuc));
+		df.setRoundingMode(RoundingMode.DOWN);
+		System.out.println(df.format(sonuc));
+		df.setRoundingMode(RoundingMode.UP);
+		System.out.println(df.format(sonuc));
+
+		
