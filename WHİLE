@@ -1,0 +1,93 @@
+//WHİLE AD YAZDIRMA----------------------------------------------------------------------------------------
+		
+		//10 DEFA YAZDIRMA
+	
+		/*
+		Scanner scanner = new Scanner(System.in);
+		int i=1;
+		while (i<=10) {
+			System.out.println("Mert");
+			i++;
+		}
+		*/
+		
+		/*
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Tekrar Sayısı Giriniz : ");
+		int tekrar = scanner.nextInt();
+		System.out.println("Yazı Giriniz : ");
+		String yazi = scanner.next();
+		
+		int i =1;
+		
+		while (i<=tekrar) {
+			System.out.println(yazi);
+			i++; // i=i+1;
+		}
+		*/
+		
+		
+		//DO WHİLE AD YAZDIRMA------------------------------------------------------------------------------
+		
+		/*
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Tekrar Sayısı Giriniz : ");
+		int tekrar = scanner.nextInt();
+		System.out.println("Yazı Giriniz : ");
+		String yazi = scanner.next();
+		
+		int i =1;
+		do {
+			i++;
+			System.out.println(yazi);
+		} while (i<=tekrar);
+		
+		*/
+		
+		
+		
+		//WHİLE-BREAK-----------------------------------------------------------------------
+		
+	/*	Scanner scanner = new Scanner(System.in);
+		int i = 0;
+		while (i++<=56) {
+			System.out.println("Sayı Giriniz : ");
+			int sayi = scanner.nextInt();
+			
+			if (sayi==99) {
+				System.out.println("Çıkış Sayısını Girdiniz!");
+				break;
+				
+			}
+			System.out.println(i+" .Sayın : " + sayi);
+		}
+		scanner.close();
+		
+		*/
+		
+		
+		//WHİLE-FAKTORİYEL-CONTİNUE-----------------------------------------------------------------------
+		
+	/*
+		Scanner scanner = new Scanner(System.in);
+		while (1==1) {
+			System.out.println("99 ÇIKIŞ - 1 ile 23 Arası Sayı Giriniz : ");
+			int sayi = scanner.nextInt();
+			if (sayi==99) {
+				System.out.println("Çıkış Sayısını Girdiniz. Çıkış Yapılıyor !");
+				break;
+			} else if(sayi<1|| sayi>23){
+				System.out.println("Aralık Dışı Değer Girildi !");
+				continue;
+				
+			}else {
+				int faktoriyel =1;
+				for (int i = 1; i <= sayi; i++) {
+					faktoriyel*=i;  // faktoriyel=faktoriyel*i
+				}
+				System.out.println(sayi + " Değerinin Faktoriyeli : " + faktoriyel);
+			}
+			
+		}
