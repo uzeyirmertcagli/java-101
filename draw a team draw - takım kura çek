@@ -1,0 +1,46 @@
+
+	static String allTeams[] = new String[8];
+	static String grup1[] = new String[4];
+	static String grup2[] = new String[4];
+	static int indexGrup1=0;
+	static int indexGrup2=0;
+	public static void main(String[] args) {
+		Random random = new Random();
+		for(int i=0; i<allTeams.length ; i++)
+			allTeams[i] = veriOku((i+1)+".Takım bilgisi giriniz:");
+		for(String team: allTeams) {
+			gruplaraAta(team);
+		}
+		System.out.println("tum gruplar: "+ Arrays.toString(allTeams));
+		System.out.println("grup1 gruplar: "+ Arrays.toString(grup1));
+		System.out.println("grup2 gruplar: "+ Arrays.toString(grup2));
+
+	}
+	
+	private static void gruplaraAta(String team) {
+		Random random = new Random();
+
+		int rand = random.nextInt(2);
+		if (indexGrup1>=4) {
+			grup2[indexGrup2]=team;
+			indexGrup2++;
+		} else if (indexGrup2>=4) {
+			grup1[indexGrup1]=team;
+			indexGrup1++;
+		} else if(rand==0) {
+			grup1[indexGrup1]=team;
+			indexGrup1++;
+		} else {
+			grup2[indexGrup2]=team;
+			indexGrup2++;
+		}
+		
+	}
+	
+	private static String veriOku(String mesaj) {
+		Scanner scanner =  new Scanner(System.in);
+		System.out.print(mesaj);
+		String deger = scanner.nextLine();
+		return deger;
+	}
+}
