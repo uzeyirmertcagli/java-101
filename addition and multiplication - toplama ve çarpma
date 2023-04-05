@@ -1,0 +1,35 @@
+//SAYI-TOPLAMA-----------------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Terim Sayısı Giriniz : ");
+		int terim = scanner.nextInt();
+		int toplamDeger = 0;
+			
+		for (int i = 1; i < terim; i++) {
+			
+			
+			toplamDeger = toplamDeger+i;
+			
+		}
+		System.out.println("Toplam Değer : " + toplamDeger);
+		
+		
+		
+		
+		
+		//ÇARPIM- TABLOSU----------------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Sayı Giriniz : ");
+		int sayi = scanner.nextInt();
+		
+		System.out.println(sayi + " İçin Çarpım Tablosu :");
+		
+		for (int i = 1; i <= 10 ; i++) {
+			System.out.println(i + " x " + sayi + " = " + (i*sayi) );			
+		}
+		
+		
