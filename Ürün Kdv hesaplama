@@ -1,0 +1,20 @@
+//Örnek = Ürünün Kdvsiz ve Zamsız Fiyatı Hesaplama --------------------------------------------------------------
+		
+		System.out.print("Ürünün Fiyatını Giriniz:");
+		int urunFiyat = scanner.nextInt();
+		System.out.println("Ürünün Fiyatı:"+ urunFiyat);
+		int ham = (urunFiyat*100)/115;
+		System.out.println("Ürünün Ham Fiyatı:"+ham);
+		int kdvsiz = (ham*100)/118;
+		System.out.println("Ürünün kdvsiz Fİyatı : "+ kdvsiz); 
+		
+		//
+		
+		System.out.print("Ürünün Ham Fİyatı Giriniz :");
+		int hamFiyat = scanner.nextInt();
+		System.out.println("Ürün Ham Fiyatı : "+ hamFiyat);
+		int kdvli = (hamFiyat*118)/100;
+		System.out.println("Kdvli Fiyat =" + kdvli);
+		int zamli = (kdvli*115)/100;
+		System.out.print("%15 Zamlı Fiyat : "+ zamli);
+		*/
