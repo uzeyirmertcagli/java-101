@@ -1,0 +1,33 @@
+package IV_HAFTA;
+
+import java.util.Scanner;
+
+public class PAZAR_YİNELE_3 {
+
+	public static void main(String[] args) {
+	int sayi= veriOkuInt("Değeri Giriniz :");
+	/*int toplam =0;
+	for (int i = 1; i <=sayi; i++) {
+		toplam+=i;
+	}
+	System.out.println("Sonuç : " + toplam);*/
+		
+		int toplam =toplamDegeriDon(sayi);
+		System.out.println("Sonuç : " + toplam);
+		
+	}
+	private static int toplamDegeriDon(int sayi) {
+		if(sayi==1) {
+			return 1;
+		} else {
+		return sayi+toplamDegeriDon(sayi-1);
+	}
+		}
+	private static int veriOkuInt(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		int kenar = scan.nextInt();
+		return kenar;
+	}
+
+}
