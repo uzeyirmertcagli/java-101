@@ -1,0 +1,134 @@
+package V_HAFTA;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class PAZAR_5 {
+
+	public static void main(String[] args) {
+
+	String dizi1[] = new String[10];
+
+		int intDizi1[] = new int[5];
+		intDizi1[0] = 2;
+		intDizi1[1] = 21;
+		intDizi1[2] = 4;
+		intDizi1[3] = 6;
+		intDizi1[4] = 78;
+
+		int[] intDizi2 = { 1, 2, 3, 4, 5, 6 };
+
+		int intDizi3[] = intDizi1;
+
+		System.out.println("4.indeks Dizi1 İlk Değer :" + intDizi1[4]);
+		System.out.println("4.indeks Dizi2 İlk Değer :" + intDizi2[4]);
+		System.out.println("4.indeks Dizi3 İlk Değer :" + intDizi3[4]);
+
+		intDizi1[4] = 8;
+
+		System.out.println("4.indeks Dizi1 İlk Değer :" + intDizi1[4]);
+		System.out.println("4.indeks Dizi2 İlk Değer :" + intDizi2[4]);
+		System.out.println("4.indeks Dizi3 İlk Değer :" + intDizi3[4]);
+
+		int intDizi4[] = new int[5];
+		intDizi4[0] = intDizi1[0];
+		intDizi4[1] = intDizi1[1];
+		intDizi4[2] = intDizi1[2];
+		intDizi4[3] = intDizi1[3];
+		intDizi4[4] = intDizi1[4];
+
+		for (int i = 0; i < intDizi1.length; i++) {
+			intDizi4[i] = intDizi1[i];
+		}
+		for (int i = 0; i < intDizi4.length; i++) {
+			System.out.println(intDizi4[i]);
+		}
+
+		int[] intDizi5 = { 1, 2, 3, 4, 5, 6 };
+		int[] intDizi6 = new int[intDizi5.length];
+		System.arraycopy(intDizi5, 0, intDizi6, 0, intDizi5.length);
+		for (int i = 0; i < intDizi6.length; i++) {
+			System.out.println("=====================" + intDizi6[i]);
+		}
+		Arrays.sort(intDizi1);
+		for (int i = 0; i < intDizi1.length; i++) {
+			System.out.println("=========" + intDizi1[i]); // Diziyi Küçükten Büyüğe Sıralama
+		}
+
+		if (Arrays.equals(intDizi1, intDizi2))
+			System.out.println("eşit");
+		else
+			System.out.println("Değil"); // İki Diziiyi Karşılaştırma
+
+		int index = Arrays.binarySearch(intDizi5, 4);
+		System.out.println(index); // 4'ün kaçıncı indexte olduğunu bulma
+
+		int ikiBoyutluDİzi[][] = new int[5][5];
+
+		int ikiBoyutluDİzi2[][] = { { 1, 2, 3 }, { 6, 7, 8 }, { 3, 4, 5 }, { 11, 12, 13 } }; // [4][3]'lük Dizi
+		System.out.println("İkiBoyutluDizinin 3'e 2. elemanı : " + ikiBoyutluDİzi2[3][2]);
+
+		System.out.println("Çıktı : " + Arrays.toString(intDizi1));
+
+		for (int j = 0; j < ikiBoyutluDİzi2.length; j++) {
+			System.out.println("İki Boyutlu Dizi String = " + Arrays.toString(ikiBoyutluDİzi2[j]));
+		}
+
+		int dizi[] = new int[5];
+		for (int i = 0; i < dizi.length; i++) {
+			dizi[i] = veriOkuInt((i + 1) + " . Değeri Giriniz  : ");
+		}
+
+		int[] diziTutma = new int[dizi.length];
+		for (int j = 0; j < diziTutma.length; j++) {
+			diziTutma[j] = dizi[dizi.length - 1 - j];
+
+		}
+
+		
+		System.out.println(Arrays.toString(diziTutma));
+
+		System.out.println( );
+		
+		/*
+		int dizi[] = new int[5];
+		for (int i = 0; i < dizi.length; i++)
+			dizi[i] = veriOkuInt((i + 1) + " . Değeri Giriniz  : ");
+
+		int sonuc = ortalamaHesapla(dizi);
+		System.out.println("Sonuç : "+sonuc);
+
+		
+		for(int sayi:dizi)
+			System.out.println(sayi);
+	
+		*/
+		
+		String ikiboyutluDizi2[][]= {{"GS","FB","TS","BJK"},{"RM","FCB","ATM","VAL"}};
+		int index1 =1;
+		for(String dizi2[]:ikiboyutluDizi2) {
+			System.out.println("Grup : "+ Arrays.toString(dizi2));
+		}
+
+		
+		
+	}
+	private static int  ortalamaHesapla(int[] dizi) {
+		int toplam =0;
+		for (int i = 0; i < dizi.length; i++) {
+			toplam+=dizi[i];
+		
+		}
+		return toplam/dizi.length;
+
+	}
+
+	private static int veriOkuInt(String message) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(message);
+		int kenar = scan.nextInt();
+		return kenar;
+	}
+
+}
