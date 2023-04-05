@@ -1,0 +1,17 @@
+//SİN-COS-TAN-COT--------------------------------------------------------------
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Dereceyi Giriniz : ");
+		int derece = scanner.nextInt();
+		
+		double sin,cos,tan,cot;
+		double radiansValue = Math.toRadians(derece);
+		sin=Math.sin(radiansValue);
+		cos=Math.cos(radiansValue);
+		tan=Math.tan(radiansValue);
+		cot=1/tan;
+		
+		System.out.println("Sin("+derece+")="+sin);
+		System.out.println("Cos("+derece+")="+cos);
+		System.out.println("Tan("+derece+")="+tan);
+		System.out.println("Cot"+derece+")="+cot);
