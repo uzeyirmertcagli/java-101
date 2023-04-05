@@ -1,0 +1,23 @@
+//TEK ÇİFT------------------------------------------------------------------------------------------
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("İlk Sayıyı Giriniz : ");
+		int s1 = scanner.nextInt();
+		System.out.println("İkinci Sayıyı Giriniz : ");
+		int s2 = scanner.nextInt();
+		
+		int s1bolum=s1%2;
+		int s2bolum=s2%2;
+		
+		if (s1bolum==0) {
+			System.out.println("1.Sayı Çift.");
+		} else {
+			System.out.println("1.Sayı Tek.");
+		} if (s2bolum==0) {
+			System.out.println("2.Sayı Çift.");
+		} else {
+			System.out.println("2.Sayı Tek.");
+		}
+		
+		
